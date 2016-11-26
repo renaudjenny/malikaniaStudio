@@ -1,3 +1,7 @@
+# Qt files
+build*
+malikaniaStudio/malikaniaStudio.pro.user
+
 # Compiled Object files
 *.slo
 *.lo
