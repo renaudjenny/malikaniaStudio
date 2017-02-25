@@ -17,6 +17,12 @@ public:
 
 private:
 	Ui::MainWindow *ui;
+
+private slots:
+	void on_actionOpenSpriteImage_triggered();
+	void on_actionOpenSpriteJSON_triggered();
+	void on_previousIndexButton_clicked();
+	void on_nextIndexButton_clicked();
 };
 
 #endif // MAINWINDOW_H
