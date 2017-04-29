@@ -9,17 +9,14 @@
 #include <QJsonArray>
 #include <QStandardItemModel>
 
-MainWindow::MainWindow(QWidget *parent) :
-	QMainWindow(parent),
-	ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent)
+	: QMainWindow(parent)
+	, ui_(new Ui::MainWindow)
 {
-	ui->setupUi(this);
+	ui_->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
-	delete ui;
-}
+MainWindow::~MainWindow() = default;
 
 void MainWindow::on_actionOpenSpriteImage_triggered()
 {
@@ -32,7 +29,7 @@ void MainWindow::on_actionOpenSpriteImage_triggered()
 	QGraphicsScene *scene = new QGraphicsScene(this);
 	scene->addPixmap(image);
 	scene->setSceneRect(image.rect());
-	ui->spriteGraphicsView->setScene(scene);
+	ui_->spriteGraphicsView->setScene(scene);
 }
 
 void MainWindow::on_actionOpenSpriteJSON_triggered()
@@ -83,7 +80,7 @@ void MainWindow::on_actionOpenSpriteJSON_triggered()
 		i++;
 	}
 
-	ui->indexListView->setModel(model);
+	ui_->indexListView->setModel(model);
 }
 
 void MainWindow::on_previousIndexButton_clicked()
