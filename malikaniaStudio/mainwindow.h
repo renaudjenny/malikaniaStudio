@@ -2,21 +2,24 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QScopedPointer>
 
 namespace Ui {
+
 class MainWindow;
-}
+
+} // !Ui
 
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	explicit MainWindow(QWidget *parent = 0);
+	MainWindow(QWidget *parent = nullptr);
 	~MainWindow();
 
 private:
-	Ui::MainWindow *ui;
+	QScopedPointer<Ui::MainWindow> ui_;
 
 private slots:
 	void on_actionOpenSpriteImage_triggered();
